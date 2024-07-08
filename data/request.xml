@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+  <transaction>nameoftrans</transaction>
+  <username>USERNAME</username>
+  <password>PASSWORD</password>
+  <Arg01>USERNAME</Arg01>
+  <Arg03>NEWPASSWORD</Arg03>
+  <Arg04>NEWPASSWORD</Arg04>
+  <Arg05>0</Arg05>
+</silockrequest>

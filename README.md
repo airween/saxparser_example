@@ -2,8 +2,7 @@
 
 Welcome to the `saxparsertest` documentation.
 
-Installation
-============
+## Installation
 
 The parser relies on *libxml2* as its underlying XML parsing library.
 
@@ -29,8 +28,7 @@ Run `autogen.sh` - this will generate `configure` script, then run `./configure`
 
 After that, you can type `make` - this will compile the binary tool under the `src/` directory.
 
-Usage
-=====
+## Usage
 
 Try to parse an XML file:
 
@@ -61,11 +59,28 @@ cat data/test1.xml
 
 You can see that the first node which has a text value is `root.a` because the XML path is `root/a`, the second is `root.b.element.a1` because the path is `root/b/element/a1`.
 
-Know issues
-===========
+### Options
+
+You can get help with `-h`:
+
+```bash
+OPTIONS:
+	-h	This help
+	-H	Hide key:value pairs, only print time
+	-T	Hide time results, only print key:value pairs
+	-d	Set the max depth of XML tree; when the parser exceeds that, terminate
+	-n	Set the max number of nodes; when the parser exceeds that, terminate
+```
+
+* `-H` - hide the key:value pairs during process; can be usefull if the XML contains many nodes
+* `-T` - hide the time results; `saxparser` prints out of total processing time at the end, if you don't need that, use this option
+* `-d` - set the maximum depth until the parser processes the file; when it reaches this value, terminates
+* `-n` - set the maximum number of nodes; when it reaches this value, terminates
+
+## Know issues
 
 The max file size is fixed in code (10MB), see:
-
 ```C
 #define BUFFLEN 1024*1024*10
 ```
+If the maximum values (depth, number of nodes - pass them by option, see [Options](#options)) reach the value, allocated pointers are not freed.

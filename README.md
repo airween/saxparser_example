@@ -37,6 +37,7 @@ src/saxparser data/test1.xml
 key: 'root.a', val: '1'
 key: 'root.b.element.a1', val: 'a1val'
 key: 'root.b.element.a1', val: 'a2val'
+Total time: 0.000061 sec
 ```
 
 The tool will parse the XML file, concatenates the node names into a key, and print the key:value pairs. The original XML content above is this:
